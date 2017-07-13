@@ -1,0 +1,12 @@
+{
+  "name": "meteor-web-api",
+  "private": true,
+  "scripts": {
+    "web-app-test": "MONGO_URL=mongodb://localhost:27017/meteor meteor --port 3100"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.20.0",
+    "fine-rest": "^1.0.12",
+    "meteor-node-stubs": "~0.2.4"
+  }
+}
