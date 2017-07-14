@@ -13,7 +13,7 @@ Meteor.startup(() => {
   // code to run on server at startup
   JsonRoutes.Middleware.use(function(req, res, next) {
 
-    if(req.query.error) {
+    if(true) {
       JsonRoutes.sendResult(res, {
         code: 401,
         data: {
