@@ -12,8 +12,8 @@ Meteor.startup(() => {
 
   // code to run on server at startup
   JsonRoutes.Middleware.use(function(req, res, next) {
-
-    if(true) {
+    console.log('inside middleware!');
+    if(false) {
       JsonRoutes.sendResult(res, {
         code: 401,
         data: {
@@ -23,16 +23,17 @@ Meteor.startup(() => {
       next(new Error("unauthorized"));
       return;
     }
-
     next();
   });
 
   JsonRoutes.Middleware.use(function(err, req, res, next) {
-    console.log("Error found", err)
+    console.log("Error found in middleware!", err);
   });
 
-  JsonRoutes.add('GET', '/test-route/', function(req, res, next) {
+  JsonRoutes.add('POST', '/test-route/', function(req, res, next) {
+    console.log('in the main route');
     JsonRoutes.sendResult(res, {
+      code: 200,
       data: {
         result: "OK"
       }

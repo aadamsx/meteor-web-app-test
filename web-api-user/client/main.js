@@ -5,22 +5,46 @@ import './main.html';
 
 Template.hello.onCreated(function helloOnCreated() {
   // counter starts at 0
-  this.webapi = new ReactiveVar('');
+  this.statusCode = new ReactiveVar(0);
+  this.result = new ReactiveVar('');
+
 });
 
 Template.hello.helpers({
-  result() {
-    return Template.instance().webapi.get();
+  status() {
+    return Template.instance().statusCode.get();
   },
+  result() {
+    return Template.instance().result.get();
+  }
 });
 
 Template.hello.events({
   'click button'(event, instance) {
-    // increment the counter when button is clicked
-    Meteor.call('test', function (error, result) {
-      if (error) throw new Meteor.Error(error);
-      console.log(`browswer side, results from web-api: ${JSON.stringify(result)}`)
-      // instance().webapi.set(JSON.stringify(result));
+    Meteor.call('testSync', function (error, response) {
+      debugger;
+      let statusCode = 0;
+      let result = '';
+      let url = '';
+      try {
+        if (error) {
+          statusCode = error.error;
+          result = error.reason;
+        }
+        else {
+          statusCode = response.statusCode;
+          result = response.data.result;
+        }
+      }
+      catch (error) {
+        statusCode = 0;
+        result = 'EXCEPTION';
+      }
+      finally {
+        instance.statusCode.set(statusCode);
+        instance.result.set(result);
+      }
+      // console.log(`browswer side, results from web-api: ${JSON.stringify(result)}`)
     });
   }
 });
