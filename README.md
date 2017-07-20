@@ -10,6 +10,44 @@
 
 .
 
+## How to use:
+
+1) Open a shell session and type: $ git clone https://github.com/aadamsx/meteor-web-app-test.git
+
+2) Now cd into the web-api-user directory and run npm install:
+
+```
+$ cd /web-api-uer
+$ meteor npm install --save
+```
+
+3) 2) Now cd into the web-api & web-api/fine-rest directory and run npm install:
+
+```
+$ cd /web-api
+$ meteor npm install --save
+$ cd /web-api/fine-rest  
+$ meteor npm install --save
+```
+
+
+2) Open two more shell sessions, one for the web-api and one for web-api-user and commands to start:
+
+#### for the Web API:
+
+```
+$ cd /web-api
+$ npm run web-app-test
+```
+
+#### for the Web API Client:
+
+```
+$ cd /web-api-user
+$ npm run web-app-test
+```
+
+
 ## Original issues:
 
 - [ ] Could not get middleware to run on exceptions.
