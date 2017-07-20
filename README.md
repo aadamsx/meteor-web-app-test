@@ -4,13 +4,14 @@
 
 ## TOC:
 
+- [Getting started](#getting-started)
 - [Original issues](#original-issues)
 - [New work](#new-work-might-create-forks)
 - [Change Log](#change-log)
 
 .
 
-## How to use:
+#### Getting started:
 
 1) Open a shell session and type: $ git clone https://github.com/aadamsx/meteor-web-app-test.git
 
@@ -30,8 +31,6 @@ $ cd /web-api/fine-rest
 $ meteor npm install --save
 ```
 
-
-2) Open two more shell sessions, one for the web-api and one for web-api-user and commands to start:
 
 #### for the Web API:
 
