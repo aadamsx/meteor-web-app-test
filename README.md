@@ -13,16 +13,16 @@
 
 ## Getting started:
 
-1) Open a shell session and type: $ git clone https://github.com/aadamsx/meteor-web-app-test.git
+#### 1) Open a shell session and type: $ git clone https://github.com/aadamsx/meteor-web-app-test.git
 
-2) Now cd into the web-api-user directory and run npm install:
+#### 2) Now cd into the web-api-user directory and run npm install:
 
 ```
 $ cd /web-api-uer
 $ meteor npm install --save
 ```
 
-3) Now cd into the web-api & web-api/fine-rest directories and run npm install:
+#### 3) Now cd into the web-api & web-api/fine-rest directories and run npm install:
 
 ```
 $ cd /web-api
@@ -31,7 +31,7 @@ $ cd /web-api/fine-rest
 $ meteor npm install --save
 ```
 
-4) Finally open two shell sessions and run the npm command below to start:
+#### 4) Finally open two shell sessions and run the npm command below to start:
 
 
 #### For the Web API:
