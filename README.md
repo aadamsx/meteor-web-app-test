@@ -1,5 +1,6 @@
 # Meteor Web API Examples using [fine-rest](https://github.com/aadamsx/fine-rest)
 
+.
 
 ## TOC:
 
@@ -9,6 +10,7 @@
 ...
 - [Change Log](#change-log)
 
+.
 
 ## Original issues:
 
@@ -24,7 +26,7 @@
   - [ ] Concurrency: Web App must be able to handle concurrent HTTP requests reading from and writing to a database.
 
 
-
+.
 
 ## Change log:
 
