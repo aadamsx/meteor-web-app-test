@@ -19,12 +19,16 @@
 $ git clone https://github.com/aadamsx/meteor-web-app-test.git
 ```
 
+Two different projects, one Web API and one the Client to the Web API.
+
+
 #### 2) Now cd into the web-api-user directory and run npm install:
 
 ```
 $ cd /web-api-uer
 $ meteor npm install --save
 ```
+
 
 #### 3) Now cd into the web-api & web-api/fine-rest directories and run npm install:
 
