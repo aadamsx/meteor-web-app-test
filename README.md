@@ -22,7 +22,7 @@ $ cd /web-api-uer
 $ meteor npm install --save
 ```
 
-3) Now cd into the web-api & web-api/fine-rest directory and run npm install:
+3) Now cd into the web-api & web-api/fine-rest directories and run npm install:
 
 ```
 $ cd /web-api
