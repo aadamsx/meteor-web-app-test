@@ -11,7 +11,7 @@
 
 .
 
-#### Getting started:
+## Getting started:
 
 1) Open a shell session and type: $ git clone https://github.com/aadamsx/meteor-web-app-test.git
 
@@ -22,7 +22,7 @@ $ cd /web-api-uer
 $ meteor npm install --save
 ```
 
-3) 2) Now cd into the web-api & web-api/fine-rest directory and run npm install:
+3) Now cd into the web-api & web-api/fine-rest directory and run npm install:
 
 ```
 $ cd /web-api
@@ -32,20 +32,21 @@ $ meteor npm install --save
 ```
 
 
-#### for the Web API:
+#### For the Web API:
 
 ```
 $ cd /web-api
 $ npm run web-app-test
 ```
 
-#### for the Web API Client:
+#### For the Web API Client:
 
 ```
 $ cd /web-api-user
 $ npm run web-app-test
 ```
 
+.
 
 ## Original issues:
 
