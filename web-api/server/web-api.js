@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
-import { JsonRoutes } from 'fine-rest';
+import { JsonRoutes } from '../fine-rest/json-routes';
+// import { JsonRoutes } from 'fine-rest';
 
 Meteor.startup(() => {
   JsonRoutes.setResponseHeaders({

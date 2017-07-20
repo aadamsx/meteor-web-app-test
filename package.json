@@ -1,0 +1,11 @@
+{
+  "name": "meteor-web-app-test",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "Meteor Web API testing",
+  "author": "Aaron Adams",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/aadamsx/meteor-web-app-test.git"
+  }
+}
