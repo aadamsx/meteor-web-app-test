@@ -6,8 +6,6 @@
 
 - [Original issues](#original-issues)
 - [New work](#new-work-might-create-forks)
-
-...
 - [Change Log](#change-log)
 
 .
