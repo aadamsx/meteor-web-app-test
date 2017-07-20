@@ -10,5 +10,5 @@
 - [ ] Engineer the auto retrieval of the Bearer token from the Web API.
 - [ ] Engineer the storage of Bearer token in order for client to use the Web API.
 - [ ] Singleton and Concurrency concepts:
-  - [ ] Singleton: One connection to a database = one module = one class within that module, must all be unique per HTTP request (cannot have one request, stepping on another by overwriting the next).
+  - [ ] Singleton: One connection to a database = one module = one class within that module, must all be unique per HTTP request (cannot have one request, stepping on another another, by overwriting the next).
   - [ ] Concurrency: Web App must be able to handle concurrent HTTP requests reading from and writing to a database.
