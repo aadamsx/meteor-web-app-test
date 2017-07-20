@@ -31,6 +31,8 @@ $ cd /web-api/fine-rest
 $ meteor npm install --save
 ```
 
+4) Finally open two shell sessions and run the npm command below to start:
+
 
 #### For the Web API:
 
@@ -39,12 +41,16 @@ $ cd /web-api
 $ npm run web-app-test
 ```
 
+By default the Web API will run on --port 3100
+
 #### For the Web API Client:
 
 ```
 $ cd /web-api-user
 $ npm run web-app-test
 ```
+
+By default the Web API client will run on --port 3101
 
 .
 
