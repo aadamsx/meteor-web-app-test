@@ -1,8 +1,7 @@
 # Meteor Web API Examples using [fine-rest](https://github.com/aadamsx/fine-rest)
 
----
 
-### TOC:
+## TOC:
 
 - [Original issues](#original-issues)
 - [New work](#new-work-might-create-forks)
@@ -10,14 +9,13 @@
 ...
 - [Change Log](#change-log)
 
----
 
-### Original issues:
+## Original issues:
 
 - [ ] Could not get middleware to run on exceptions.
 - [ ] Could not add a code to sendResult() without the requestor (web-api-user project) hanging.
 
-### New work (might create forks):
+## New work (might create forks):
 
 - [ ] Engineer the auto retrieval of the Bearer token from the Web API.
 - [ ] Engineer the storage of Bearer token in order for client to use the Web API.
