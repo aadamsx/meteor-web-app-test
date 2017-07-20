@@ -4,11 +4,11 @@
 
 ### TOC:
 
-### [Original issues](#original-issues)
-### [New work](#new-work-might-create-forks)
+- [Original issues](#original-issues)
+- [New work](#new-work-might-create-forks)
 
 ...
-### [Change Log](#change-log)
+- [Change Log](#change-log)
 
 ---
 
