@@ -13,7 +13,11 @@
 
 ## Getting started:
 
-#### 1) Open a shell session and type: $ git clone https://github.com/aadamsx/meteor-web-app-test.git
+#### 1) Open a shell session and get the test app:
+
+```
+$ git clone https://github.com/aadamsx/meteor-web-app-test.git
+```
 
 #### 2) Now cd into the web-api-user directory and run npm install:
 
