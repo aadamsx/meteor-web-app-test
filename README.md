@@ -56,8 +56,8 @@ By default the Web API client will run on --port 3101
 
 ## Original issues:
 
-- [ ] Could not get middleware to run on exceptions.
-- [ ] Could not add a code to sendResult() without the requestor (web-api-user project) hanging.
+- [x] Could not get middleware to run on exceptions.
+- [x] Could not add a code to sendResult() without the requestor (web-api-user project) hanging.
 
 .
 
