@@ -2,7 +2,7 @@
 
 ### Original issues:
 
-- [ ]Could not get middleware to run on exceptions.
+- [ ] Could not get middleware to run on exceptions.
 - [ ] Could not add a code to sendResult() without the requestor (web-api-user project) hanging.
 
 ### New work (might create forks):
