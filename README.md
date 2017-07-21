@@ -6,12 +6,12 @@
 
 - [Getting started](#getting-started)
 
-.
+
 
 - [Create Bearer Token](#create-bearer-token)
 - [Debugging Web API](#debugging-web-api)
 
-.
+
 
 - [Issues](#issues)
 - [New work](#new-work)
