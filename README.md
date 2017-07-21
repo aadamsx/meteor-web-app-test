@@ -1,7 +1,5 @@
 # Meteor Web API Examples using [fine-rest](https://github.com/aadamsx/fine-rest)
 
-.
-
 ## TOC:
 
 ### [Getting started](#getting-started)
