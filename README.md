@@ -5,8 +5,16 @@
 ## TOC:
 
 - [Getting started](#getting-started)
-- [Original issues](#original-issues)
-- [New work](#new-work-might-create-forks)
+
+.
+
+- [Create Bearer Token](#create-bearer-token)
+- [Debugging Web API](#debugging-web-api)
+
+.
+
+- [Issues](#issues)
+- [New work](#new-work)
 - [Change Log](#change-log)
 
 .
@@ -73,11 +81,15 @@ curl -X POST \
 
 There is no actual check for security yet, although it should work if properly implemented.
 
-#### 6) In order to check the fine-rest lib will return a Bearer token you must:
 
-- Stand up a MongoDB local service @ localhost:27017/meteor
-- Create users in this database with the Meteor accounts-base package
-- Pass in the username and password from one of these users into the Web API like so:
+## Create Bearer Token:
+
+
+In order to check the fine-rest lib will return a Bearer token you must do the following:
+
+#### 1) Stand up a MongoDB local service @ localhost:27017/meteor
+#### 2) Create users in this database with the Meteor [accounts-password](https://docs.meteor.com/api/passwords.html) package.
+#### 3) Pass in the username and password from one of these users into the Web API like so:
 
 ```
 curl -X POST \
@@ -100,14 +112,9 @@ You should get a response:
 This token is your Bearer token that you can use for all subsequent Web API calls (when this is implemented).
 .
 
-#### 7) To debug the server side Web API you must specify the debug port and start Meteor like so:
+## Debugging Web API:
 
-```
-MONGO_URL=mongodb://localhost:27017/meteor meteor --debug-port 3200 --port 3100
-```
-
-Note: After you run this command you must go to this URL in order to attach to the server process: http://localhost:5422/?port=3200
-- Make sure before running this command you have attached debugger; comments where you want to "hook" into your code, for example:
+#### 1) Make sure before running this command you have attached debugger; comments where you want to "hook" into your code, for example:
 
 ```javascript
 JsonRoutes.add('POST', '/test-route/', function(req, res, next) {
@@ -121,7 +128,16 @@ JsonRoutes.add('POST', '/test-route/', function(req, res, next) {
 });
 ```
 
-#### 8) Now call the route again and start debugging the server side Web API:
+#### 2) To debug the server side Web API you must specify the debug port and start Meteor like so:
+
+```
+MONGO_URL=mongodb://localhost:27017/meteor meteor --debug-port 3200 --port 3100
+```
+
+#### 3) After you run this command you must go to this URL in order to attach to the server process: http://localhost:5422/?port=3200
+
+
+#### 4) Now call the route again with curl and start debugging the server side Web API:
 
 ```
 curl -X POST \
@@ -135,14 +151,14 @@ curl -X POST \
 
 .
 
-## Original issues:
+## Issues:
 
 - [x] Could not get middleware to run on exceptions.
 - [x] Could not add a code to sendResult() without the requestor (web-api-user project) hanging.
 - [ ] Could get not get CORS to work.
 .
 
-## New work (might create forks):
+## New work:
 
 - [ ] Engineer the auto retrieval of the Bearer token from the Web API.
 - [ ] Engineer the storage of Bearer token in order for client to use the Web API.
