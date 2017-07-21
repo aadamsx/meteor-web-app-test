@@ -128,8 +128,11 @@ JsonRoutes.add('POST', '/test-route/', function(req, res, next) {
 MONGO_URL=mongodb://localhost:27017/meteor meteor --debug-port 3200 --port 3100
 ```
 
-#### 3) After you run this command you must go to this URL in order to attach to the server process: http://localhost:5422/?port=3200
+#### 3) After running this command you must go to the following URL in order to attach to the server process:
 
+```
+http://localhost:5422/?port=3200
+```
 
 #### 4) Now call the route again with curl and start debugging the server side Web API:
 
