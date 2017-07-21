@@ -7,5 +7,11 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/aadamsx/meteor-web-app-test.git"
-  }
+  },
+  "tag_name": "v0.1.0",
+  "target_commitish": "master",
+  "name": "v0.1.0",
+  "body": "fine-rest examples software",
+  "draft": true,
+  "prerelease": true
 }
