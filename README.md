@@ -2,14 +2,14 @@
 
 ## TOC:
 
-### [Getting started](#getting-started)
+### [Getting started](#getting-started-1)
 
-### [Create Bearer Token](#create-bearer-token)
-### [Debugging Web API](#debugging-web-api)
+### [Create Bearer Token](#create-bearer-token-1)
+### [Debugging Web API](#debugging-web-api-1)
 
-### [Issues](#issues)
-### [New work](#new-work)
-### [Change Log](#change-log)
+### [Issues](#issues-1)
+### [Outstanding](#outstanding-1)
+### [Change Log](#change-log-1)
 
 .
 
@@ -152,7 +152,7 @@ curl -X POST \
 - [ ] Could get not get CORS to work.
 .
 
-## New work:
+## Outstanding:
 
 - [ ] Engineer the auto retrieval of the Bearer token from the Web API.
 - [ ] Engineer the storage of Bearer token in order for client to use the Web API.
