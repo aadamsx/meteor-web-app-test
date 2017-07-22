@@ -9,6 +9,7 @@
 
 ### [Issues](#issues-1)
 ### [Outstanding](#outstanding-1)
+### [Ideas Sandbox](#ideas-sandbox-1)
 ### [Change Log](#change-log-1)
 
 .
@@ -159,10 +160,26 @@ curl -X POST \
 
 - [ ] Engineer the auto retrieval of the Bearer token from the Web API.
 - [ ] Engineer the storage of Bearer token in order for client to use the Web API.
+  - [ ] localStorage.getItem(...) to store token.
 - [ ] Singleton and Concurrency concepts:
   - [ ] Singleton: One connection to a database = one module = one class within that module, must all be unique per HTTP request (cannot have one request, stepping on another, by overwriting the next).
   - [ ] Concurrency: Web App must be able to handle concurrent HTTP requests reading from and writing to a database.
 - [ ] Middleware that only runs for a particular route.
+
+.
+
+## Ideas Sandbox:
+
+#### Using localStorage to store and for retrieval of token:
+
+```javascript
+Tracker.autorun(function() {
+  if (Meteor.user()) {
+    if (localStorage.getItem('token') {
+      // ...
+    }
+  }
+```
 
 .
 
