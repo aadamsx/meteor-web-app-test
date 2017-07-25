@@ -197,7 +197,7 @@ Tracker.autorun(function() {
 -  Added requirement to pass in databaseId.  There are two databases to choose from, web-api-1 and web-api-2.
 -  Added imports directory where the People class and Mono collections are defined.
 -  Added new ```/api/test-route2```.
--  All security checks are not under the new ``/api``` route.
+-  All security checks are not under the new ```/api``` route.
 
 #### 0.1.0
 
