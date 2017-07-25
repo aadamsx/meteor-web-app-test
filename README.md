@@ -98,8 +98,8 @@ You should get a response:
 
 ```bash
 {
-    "id": "DGQcL5GdzNv7kC6s8",
-    "token": "3WGgilxEz-oRH9U5_ArWhO9tcSr782Yli4IO5xkMR-j",
+    "id": "456",
+    "token": "123",
     "tokenExpires": "2017-10-19T04:10:18.644Z"
 }
 ```
@@ -142,10 +142,10 @@ http://localhost:5422/?port=3200
 ```bash
 curl -X POST \
   http://localhost:3100/api/test-route2 \
-  -H 'authorization: Bearer IGLm1hZ_8y87dDnJQXifuS1aQ2aWIXV1lflRXEPOVpI' \
+  -H 'authorization: Bearer 123' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
-  -d 'userId=H7JEBF5uHaqYK35pG&dbId=database_2'
+  -d 'userId=456&dbId=database_2'
 ```
 
 Note: For this route, security is on, this means the ```Bearer token``` must be valid (in the user's collection record), the ```userId``` must be valid (again in the user's collection record) for the ```databaseId``` passed in, either ```database_1``` or ```database_2```.
@@ -172,6 +172,7 @@ Note: For this route, security is on, this means the ```Bearer token``` must be 
 - [x] Middleware that only runs for a particular route.
 - [x] Ability to retrieve data from multiple databases.
 - [ ] Add rate limiter to avoid request overload.
+- [ ] React Native client to Web API?
 
 .
 
@@ -180,14 +181,9 @@ Note: For this route, security is on, this means the ```Bearer token``` must be 
 #### Using localStorage to store and for retrieval of token:
 
 ```javascript
-Tracker.autorun(function() {
-  if (Meteor.user()) {
-    if (localStorage.getItem('token') {
-
-    }
-  }
-}
+localStorage.getItem('token');
 ```
+
 
 
 #### Looking at Web Hooks:
