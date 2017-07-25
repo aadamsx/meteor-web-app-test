@@ -18,7 +18,7 @@
 
 #### 1) Open a shell session and get the test app:
 
-```
+```bash
 $ git clone https://github.com/aadamsx/meteor-web-app-test.git
 ```
 
@@ -27,14 +27,14 @@ Two different projects, one Web API and one the Client to the Web API.
 
 #### 2) Now cd into the web-api-user directory and run npm install:
 
-```
+```bash
 $ cd /web-api-uer
 $ meteor npm install --save
 ```
 
 #### 3) Now cd into the web-api & web-api/fine-rest directories and run npm install:
 
-```
+```bash
 $ cd /web-api
 $ meteor npm install --save
 $ cd /web-api/fine-rest  
@@ -46,7 +46,7 @@ $ meteor npm install --save
 
 #### For the Web API:
 
-```
+```bash
 $ cd /web-api
 $ npm run web-app-test
 ```
@@ -55,7 +55,7 @@ By default the Web API will run on ```--port 3100```
 
 #### For the Web API Client:
 
-```
+```bash
 $ cd /web-api-user
 $ npm run web-app-test
 ```
@@ -64,7 +64,7 @@ By default the Web API client will run on ```--port 3101```
 
 #### 5) To test the Web API is running:
 
-```
+```bash
 curl -X POST \
   http://localhost:3100/test-route \
   -H 'cache-control: no-cache' \
@@ -86,7 +86,7 @@ Note: The default database is simpley ```web-api```, yet when calling a route un
 #### 2) Create users in this database with the Meteor [accounts-password](https://docs.meteor.com/api/passwords.html) package.
 #### 3) Pass in the username and password from one of these users into the Web API like so:
 
-```
+```bash
 curl -X POST \
   http://localhost:3100/users/login \
   -H 'cache-control: no-cache' \
@@ -96,7 +96,7 @@ curl -X POST \
 
 You should get a response:
 
-```
+```bash
 {
     "id": "DGQcL5GdzNv7kC6s8",
     "token": "3WGgilxEz-oRH9U5_ArWhO9tcSr782Yli4IO5xkMR-j",
@@ -139,7 +139,7 @@ http://localhost:5422/?port=3200
 
 #### 4) Now call the route again with curl and start debugging the server side Web API:
 
-```
+```bash
 curl -X POST \
   http://localhost:3100/api/test-route2 \
   -H 'authorization: Bearer IGLm1hZ_8y87dDnJQXifuS1aQ2aWIXV1lflRXEPOVpI' \
@@ -171,6 +171,7 @@ Note: For this route, security is on, this means the ```Bearer token``` must be 
   - [ ] Concurrency: Web App must be able to handle concurrent HTTP requests reading from and writing to a database.
 - [x] Middleware that only runs for a particular route.
 - [x] Ability to retrieve data from multiple databases.
+- [ ] Add rate limiter to avoid request overload.
 
 .
 
@@ -182,10 +183,20 @@ Note: For this route, security is on, this means the ```Bearer token``` must be 
 Tracker.autorun(function() {
   if (Meteor.user()) {
     if (localStorage.getItem('token') {
-      // ...
+
     }
   }
+}
 ```
+
+
+#### Looking at Web Hooks:
+
+- We could send an immediate response to the user with the URL to the file and set a flag inside the "shared" database with the status of the operation.
+- But the issue is we'd still have to periodically check the status.  I think Web Hooks on the Web API allow you to get alerted when the status changes?
+
+- I think as it stands, the code is synchronous and thus does not require me to use webhooks?
+
 
 .
 
