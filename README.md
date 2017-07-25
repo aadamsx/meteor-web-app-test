@@ -51,7 +51,7 @@ $ cd /web-api
 $ npm run web-app-test
 ```
 
-By default the Web API will run on --port 3100
+By default the Web API will run on ```--port 3100```
 
 #### For the Web API Client:
 
@@ -60,7 +60,7 @@ $ cd /web-api-user
 $ npm run web-app-test
 ```
 
-By default the Web API client will run on --port 3101
+By default the Web API client will run on ```--port 3101```
 
 #### 5) To test the Web API is running:
 
@@ -71,7 +71,7 @@ curl -X POST \
   -H 'content-type: application/json'
 ```
 
-There is security checks are NOT on for the above route, so you will not  have to call out to the API ```/users/login``` first.  For routes under ```/api``` you must first get a valid token. An example is provided under [Create Bearer Token](#create-bearer-token-1).  Options for database are ```database_1``` or ```database_2``` defined in the ```settings.json``` file.
+Security checks are NOT implemented for the above route, so you will not have to call out to the API ```/users/login``` first.  For routes under ```/api``` you must first get a valid token. An example is provided under [Create Bearer Token](#create-bearer-token-1).  Options for database are ```database_1``` or ```database_2``` defined in the ```settings.json``` file.
 
 
 ## Create Bearer Token:
