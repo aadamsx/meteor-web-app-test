@@ -34,9 +34,9 @@ Meteor.methods({
   testSync() {
     console.log('server side method call to Web API')
     let result = null;
-    const token = '123';
-    const userId = '123';
-    const url = 'http://localhost:3100/test-route';
+    const token = 'SgWlatCtUKebStm1yE8mdIxRFCGVR44TQfUWsIXnagq';
+    const userId = 'H7JEBF5uHaqYK35pG';
+    const url = 'http://localhost:3100/api/test-route2';
     try {
       result = HTTP.call('POST', url,
         {

@@ -67,13 +67,11 @@ By default the Web API client will run on --port 3101
 ```
 curl -X POST \
   http://localhost:3100/test-route \
-  -H 'authorization: Bearer 12345' \
   -H 'cache-control: no-cache' \
-  -H 'content-type: application/json' \
-  -d userId=12345
+  -H 'content-type: application/json'
 ```
 
-There is no actual check for security yet, although it should work if properly implemented.
+There is security checks are NOT on for the above route, so you will not  have to call out to the API ```/users/login``` first.  For routes under ```/api``` you must first get a valid token. An example is provided under [Create Bearer Token](#create-bearer-token-1).  Options for database are ```database_1``` or ```database_2``` defined in the ```settings.json``` file.
 
 
 ## Create Bearer Token:
@@ -103,7 +101,7 @@ You should get a response:
 }
 ```
 
-This token is your Bearer token that you can use for all subsequent Web API calls (when this is implemented).
+This token is your Bearer token that you have to use for all subsequent Web API calls.
 .
 
 ## Debugging Web API:
@@ -125,8 +123,10 @@ JsonRoutes.add('POST', '/test-route/', function(req, res, next) {
 #### 2) To debug the server side Web API you must specify the debug port and start Meteor like so:
 
 ```
-MONGO_URL=mongodb://localhost:27017/meteor meteor --debug-port 3200 --port 3100
+MONGO_URL=mongodb://localhost:27017/meteor meteor --debug-port 3200 --port 3100 --settings settings.json
 ```
+
+Note: by default running ```npm web-app-test``` will run with debug turned on.
 
 #### 3) After running this command you must go to the following URL in order to attach to the server process:
 
@@ -138,11 +138,11 @@ http://localhost:5422/?port=3200
 
 ```
 curl -X POST \
-  http://localhost:3100/test-route \
-  -H 'authorization: Bearer 12345' \
+  http://localhost:3100/api/test-route2 \
+  -H 'authorization: Bearer IGLm1hZ_8y87dDnJQXifuS1aQ2aWIXV1lflRXEPOVpI' \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
-  -d userId=12345
+  -d 'userId=H7JEBF5uHaqYK35pG&dbId=database_2'
 ```
 
 
@@ -164,7 +164,8 @@ curl -X POST \
 - [ ] Singleton and Concurrency concepts:
   - [ ] Singleton: One connection to a database = one module = one class within that module, must all be unique per HTTP request (cannot have one request, stepping on another, by overwriting the next).
   - [ ] Concurrency: Web App must be able to handle concurrent HTTP requests reading from and writing to a database.
-- [ ] Middleware that only runs for a particular route.
+- [x] Middleware that only runs for a particular route.
+- [x] Ability to retrieve data from multiple databases
 
 .
 
@@ -184,6 +185,14 @@ Tracker.autorun(function() {
 .
 
 ## Change log:
+
+#### 0.1.0
+
+-  The Meteor Web API now talks to (3) MongoDBs. The first DB named ```web-api``` is the default for the Web API.  The second and third DBs options are stored in the settings.json file.
+-  Added requirement to pass in databaseId.  There are two databases to choose from, web-api-1 and web-api-2.
+-  Added imports directory where the People class and Mono collections are defined.
+-  Added new /api/test-route2
+-  All security checks are not under the new /api route.
 
 #### 0.1.0
 
