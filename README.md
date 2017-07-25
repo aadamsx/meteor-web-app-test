@@ -79,7 +79,10 @@ Security checks are NOT implemented for the above route, so you will not have to
 
 In order to check the fine-rest lib will return a Bearer token you must do the following:
 
-#### 1) Stand up a MongoDB local service @ localhost:27017/meteor
+#### 1) Stand up a MongoDB local service @ localhost:27017/web-api-2
+
+Note: The default database is simpley ```web-api```, yet when calling a route under ```/api/```, specifically ```/api/test-route2``` you must specify either ```database_1``` corresponding to web-api-1 or ```database_2``` corresponding to web-api-2.
+
 #### 2) Create users in this database with the Meteor [accounts-password](https://docs.meteor.com/api/passwords.html) package.
 #### 3) Pass in the username and password from one of these users into the Web API like so:
 
@@ -145,6 +148,7 @@ curl -X POST \
   -d 'userId=H7JEBF5uHaqYK35pG&dbId=database_2'
 ```
 
+Note: For this route, security is on, this means the ```Bearer token``` must be valid (in the user's collection record), the ```userId``` must be valid (again in the user's collection record) for the ```databaseId``` passed in, either ```database_1``` or ```database_2```.
 
 .
 
