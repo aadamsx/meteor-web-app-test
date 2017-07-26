@@ -173,6 +173,7 @@ Note: For this route, security is on, this means the ```Bearer token``` must be 
 - [x] Ability to retrieve data from multiple databases.
 - [ ] Add rate limiter to avoid request overload.
 - [ ] React Native client to Web API?
+- [ ] Logging in middleware for all requests.
 
 .
 
