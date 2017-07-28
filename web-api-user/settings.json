@@ -1,3 +1,3 @@
 {
-  "database_1": "mongodb://localhost:27017/web-api-1"
+  "databaseId": "database_1"
 }
