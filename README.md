@@ -188,6 +188,7 @@ Note: For this route, security is on, this means the ```Bearer token``` must be 
 - [ ] Add rate limiter to avoid request overload.
 - [ ] React Native client to Web API?
 - [ ] Logging in middleware for all requests.
+- [ ] Consider removing Meteor Accounts dependency
 
 .
 
