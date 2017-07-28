@@ -31,12 +31,12 @@ const getBearerTokenWithLoginToken = loginToken => {
   }
 }
 
-const globals = new Mongo.Collection('Globals');
+const ServerState = new Mongo.Collection('ServerState');
 
 Accounts.onLogin(user => {
   const userId = user && user.user && user.user._id || '';
 	console.log(`Accounts.onLogin on server is called, userId: ${userId}`);
-  const tokenRecord = globals.findOne({ type: 'WEB_API_TOKEN' });
+  const tokenRecord = ServerState.findOne({ type: 'WEB_API_TOKEN' });
   const token = tokenRecord && tokenRecord.token || null;
   const tokenExpires = tokenRecord && tokenRecord.tokenExpires || null;
   let getNewBearerToken = false;
@@ -71,7 +71,7 @@ Accounts.onLogin(user => {
     const response = getBearerTokenWithLoginToken(loginToken);
     debugger;
     console.log(`results should contain a [Bearer] token AND a timestamp, save these two values to MongoDB storage somewhere.`);
-    globals.update({ type: 'WEB_API_TOKEN' }, { type: 'WEB_API_TOKEN', token: response.data.token, tokenExpires: response.data.tokenExpires }, { upsert: true, multi: false }); // => tokenExpires: ISO encoded date string
+    ServerState.update({ type: 'WEB_API_TOKEN' }, { type: 'WEB_API_TOKEN', token: response.data.token, tokenExpires: response.data.tokenExpires }, { upsert: true, multi: false }); // => tokenExpires: ISO encoded date string
     // console.log(`all subsequent calls to the Web API must use the [Bearer] token stored in localStorage.`);
   }
 });
