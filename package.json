@@ -1,6 +1,6 @@
 {
   "name": "meteor-web-app-test",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "license": "MIT",
   "description": "Meteor Web API testing",
   "author": "Aaron Adams",

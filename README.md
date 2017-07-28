@@ -51,7 +51,7 @@ $ cd /web-api
 $ npm run web-app-test
 ```
 
-By default the Web API will run on ```--port 3100```
+By default the Web API will run on ```--port 4500```
 
 #### For the Web API Client:
 
@@ -66,7 +66,7 @@ By default the Web API client will run on ```--port 3101```
 
 ```bash
 curl -X POST \
-  http://localhost:3100/test-route \
+  http://localhost:4500/test-route \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json'
 ```
@@ -88,11 +88,24 @@ Note: The default database is simpley ```web-api```, yet when calling a route un
 
 ```bash
 curl -X POST \
-  http://localhost:3100/users/login \
+  http://localhost:4500/users/login \
   -H 'cache-control: no-cache' \
   -H 'content-type: application/json' \
   -d 'email=test@test.com&password=12345'
 ```
+
+A NEW option is to log in with a temp token:
+
+```bash
+curl -X POST \
+  http://localhost:4500/users/token-login \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -d 'dbId=database_1&loginToken=123'
+
+```
+For this option only the temporary login token is required, the databaseId is optional and requires a database URL in the settings.json file (please see the code for more details).
+
 
 You should get a response:
 
@@ -198,6 +211,12 @@ localStorage.getItem('token');
 .
 
 ## Change log:
+
+#### 0.2.0
+
+- fine-rest in this example has been updated with the option to log in with a token.  The new route is named ```/users/token-login``` and has the option to pass in a database ID for multi-database use.  I will update the NPM version of fine-rest to reflect this changes at some point soon.
+- The example ```web-api-user``` client application now checks for a Bearer token server side inside a MongoDB collection named ```Globals``` -- if its there it uses it for Web API calls, if not it goes and gets a new one from the Web API.
+
 
 #### 0.1.1
 

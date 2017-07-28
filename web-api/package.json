@@ -2,7 +2,7 @@
   "name": "meteor-web-api",
   "private": true,
   "scripts": {
-    "web-app-test": "MONGO_URL=mongodb://localhost:27017/web-api meteor --debug-port 3200 --port 3100 --settings settings.json"
+    "web-app-test": "MONGO_URL=mongodb://localhost:27017/web-api meteor --debug-port 4000 --port 4500 --settings settings.json"
   },
   "dependencies": {
     "babel-runtime": "^6.20.0",

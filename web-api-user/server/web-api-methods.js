@@ -1,5 +1,7 @@
 import { HTTP } from 'meteor/http';
 
+const globals = new Mongo.Collection('Globals');
+
 Meteor.methods({
   async testAsync() {
     console.log('server side method call to Web API')
@@ -11,7 +13,7 @@ Meteor.methods({
       result = await HTTP.call('POST', url,
         {
           data: { userId: userId },
-          headers: { 'content-type': 'application/x-www-form-urlencoded', 'authorization': `Bearer ${token}`, 'cache-control': 'no-cache' }
+          headers: { 'content-type': 'application/json', 'authorization': `Bearer ${token}`, 'cache-control': 'no-cache' }
         }
       );
       console.log(`server side method call, statusCode on response: ${result.statusCode}`);
@@ -33,15 +35,16 @@ Meteor.methods({
 
   testSync() {
     console.log('server side method call to Web API')
+    const tokenRecord = globals.findOne({ type: 'WEB_API_TOKEN' });
     let result = null;
-    const token = 'SgWlatCtUKebStm1yE8mdIxRFCGVR44TQfUWsIXnagq';
+    const token = tokenRecord && tokenRecord.token || null;
     const userId = 'H7JEBF5uHaqYK35pG';
-    const url = 'http://localhost:3100/api/test-route2';
+    const url = 'http://localhost:4500/api/test-route2';
     try {
       result = HTTP.call('POST', url,
         {
           data: { userId: userId },
-          headers: { 'content-type': 'application/x-www-form-urlencoded', 'authorization': `Bearer ${token}`, 'cache-control': 'no-cache' }
+          headers: { 'content-type': 'application/json', 'authorization': `Bearer ${token}`, 'cache-control': 'no-cache' }
         }
       );
       console.log(`server side method call, statusCode on response: ${result.statusCode}`);

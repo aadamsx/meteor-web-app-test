@@ -48,3 +48,9 @@ Template.hello.events({
     });
   }
 });
+
+Accounts.onLogin(user => {
+  debugger;
+  console.log(`user: ${user}`);
+
+});
