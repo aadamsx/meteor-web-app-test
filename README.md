@@ -177,13 +177,14 @@ Note: For this route, security is on, this means the ```Bearer token``` must be 
 
 - [ ] Add "Web Hooks" on the client to get response status from long-running service.
 - [ ] Engineer the auto retrieval of the Bearer token from the Web API.
-- [ ] Engineer the storage of Bearer token in order for client to use the Web API.
-  - [ ] localStorage.getItem(...) to store token.
+- [x] Engineer the storage of Bearer token in order for client to use the Web API.
+  - [x] MongoDB storage of Bearer token.
 - [ ] Singleton and Concurrency concepts:
   - [ ] Singleton: One connection to a database = one module = one class within that module, must all be unique per HTTP request (cannot have one request, stepping on another, by overwriting the next).
   - [ ] Concurrency: Web App must be able to handle concurrent HTTP requests reading from and writing to a database.
 - [x] Middleware that only runs for a particular route.
 - [x] Ability to retrieve data from multiple databases.
+- [x] Added login token ability (instead of user name and password)
 - [ ] Add rate limiter to avoid request overload.
 - [ ] React Native client to Web API?
 - [ ] Logging in middleware for all requests.
