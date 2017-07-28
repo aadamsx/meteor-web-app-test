@@ -176,7 +176,7 @@ Note: For this route, security is on, this means the ```Bearer token``` must be 
 ## Outstanding:
 
 - [ ] Add "Web Hooks" on the client to get response status from long-running service.
-- [ ] Engineer the auto retrieval of the Bearer token from the Web API.
+- [x] Engineer the auto retrieval of the Bearer token from the Web API.
 - [x] Engineer the storage of Bearer token in order for client to use the Web API.
   - [x] MongoDB storage of Bearer token.
 - [ ] Singleton and Concurrency concepts:
@@ -193,13 +193,6 @@ Note: For this route, security is on, this means the ```Bearer token``` must be 
 .
 
 ## Ideas Sandbox:
-
-#### Using localStorage to store and for retrieval of token:
-
-```javascript
-localStorage.getItem('token');
-```
-
 
 
 #### Looking at Web Hooks:
