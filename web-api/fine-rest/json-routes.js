@@ -1,10 +1,5 @@
-/* global JsonRoutes:true */
-
-// var Fiber = require('fibers');
 import Fiber from 'fibers';
-// var connect = require('connect');
 import connect from 'connect';
-// var connectRoute = require('connect-route');
 import connectRoute from 'connect-route';
 
 import { Mongo, MongoInternals } from 'meteor/mongo';
