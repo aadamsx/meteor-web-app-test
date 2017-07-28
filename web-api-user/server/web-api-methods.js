@@ -1,6 +1,6 @@
 import { HTTP } from 'meteor/http';
 
-const globals = new Mongo.Collection('Globals');
+// const globals = new Mongo.Collection('Globals');
 
 Meteor.methods({
   async testAsync() {
