@@ -169,7 +169,6 @@ Note: For this route, security is on, this means the ```Bearer token``` must be 
 
 - [x] Could not get middleware to run on exceptions.
 - [x] Could not add a code to sendResult() without the requestor (web-api-user project) hanging.
-- [x] Could get not get CORS to work.
 
 .
 
@@ -180,7 +179,8 @@ Note: For this route, security is on, this means the ```Bearer token``` must be 
   - [x] MongoDB storage of Bearer token.
 - [x] Middleware that only runs for a particular route.
 - [x] Ability to retrieve data from multiple databases.
-- [x] Added login token ability (instead of user name and password)
+- [x] Added login token ability (instead of user name and password).
+- [x] Get CORS working.
 - [ ] Add a check for user Roles to see if they have permission on an endpoint.
 - [ ] Add rate limiter to avoid request overload.
 - [ ] React Native client to Web API?
