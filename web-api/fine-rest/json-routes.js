@@ -288,7 +288,7 @@ JsonRoutes.add('post', '/users/login', (req, res) => {
   const options = req.body;
 
   let user;
-  if (options.hasOwnProperty('email')) {
+  if (options.hasOwnProperty('email') && options.hasOwnProperty('dbId')) {
     check(options, {
       email: String,
       password: String,
@@ -297,7 +297,7 @@ JsonRoutes.add('post', '/users/login', (req, res) => {
     const driver = new MongoInternals.RemoteCollectionDriver(Meteor.settings[dbId]); // must have the database URL in your settings.json file
     const users = new Mongo.Collection("users", { _driver: driver, _suppressSameNameError: true });
     user = users.findOne({ 'emails.address': options.email });
-  } else {
+  } else if (options.hasOwnProperty('username') && options.hasOwnProperty('dbId')) {
     check(options, {
       username: String,
       password: String,
@@ -305,6 +305,20 @@ JsonRoutes.add('post', '/users/login', (req, res) => {
     });
     const driver = new MongoInternals.RemoteCollectionDriver(Meteor.settings[dbId]); // must have the database URL in your settings.json file
     const users = new Mongo.Collection("users", { _driver: driver, _suppressSameNameError: true });
+    user = users.findOne({ username: options.username });
+  } else if (options.hasOwnProperty('email')) {
+    check(options, {
+      email: String,
+      password: String
+    });
+    const users = new Mongo.Collection("users");
+    user = users.findOne({ 'emails.address': options.email });
+  } else if (options.hasOwnProperty('username')) {
+    check(options, {
+      username: String,
+      password: String
+    });
+    const users = new Mongo.Collection("users");
     user = users.findOne({ username: options.username });
   }
 
