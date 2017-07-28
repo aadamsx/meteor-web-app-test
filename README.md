@@ -169,19 +169,15 @@ Note: For this route, security is on, this means the ```Bearer token``` must be 
 
 - [x] Could not get middleware to run on exceptions.
 - [x] Could not add a code to sendResult() without the requestor (web-api-user project) hanging.
-- [ ] Could get not get CORS to work.
+- [x] Could get not get CORS to work.
 
 .
 
 ## Outstanding:
 
-- [ ] Add "Web Hooks" on the client to get response status from long-running service.
 - [x] Engineer the auto retrieval of the Bearer token from the Web API.
 - [x] Engineer the storage of Bearer token in order for client to use the Web API.
   - [x] MongoDB storage of Bearer token.
-- [ ] Singleton and Concurrency concepts:
-  - [ ] Singleton: One connection to a database = one module = one class within that module, must all be unique per HTTP request (cannot have one request, stepping on another, by overwriting the next).
-  - [ ] Concurrency: Web App must be able to handle concurrent HTTP requests reading from and writing to a database.
 - [x] Middleware that only runs for a particular route.
 - [x] Ability to retrieve data from multiple databases.
 - [x] Added login token ability (instead of user name and password)
@@ -189,6 +185,10 @@ Note: For this route, security is on, this means the ```Bearer token``` must be 
 - [ ] React Native client to Web API?
 - [ ] Logging in middleware for all requests.
 - [ ] Consider removing Meteor Accounts dependency
+- [ ] Add "Web Hooks" on the client to get response status from long-running service.
+- [ ] Singleton and Concurrency concepts:
+  - [ ] Singleton: One connection to a database = one module = one class within that module, must all be unique per HTTP request (cannot have one request, stepping on another, by overwriting the next).
+  - [ ] Concurrency: Web App must be able to handle concurrent HTTP requests reading from and writing to a database.
 
 .
 
