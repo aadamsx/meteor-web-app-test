@@ -181,6 +181,7 @@ Note: For this route, security is on, this means the ```Bearer token``` must be 
 - [x] Ability to retrieve data from multiple databases.
 - [x] Added login token ability (instead of user name and password).
 - [x] Get CORS working.
+  - [ ] CORS working for specific domains.
 - [ ] Add a check for user Roles to see if they have permission on an endpoint.
 - [ ] Add rate limiter to avoid request overload.
 - [ ] React Native client to Web API?
